@@ -1,21 +1,56 @@
+use std::io;
+
 fn main () {
 
-    let mut num = 3;
+    // Temperature Converter
 
-    while num != 0{
-        println!("{num}!");
-        num -= 1;
-    }
-    println!("Lift OFF!");
+    let mut temp = String::new();
 
-    let a = [1, 2, 3, 4, 5];
+    println!("Enter the Temperature in Celsius: ");
 
-    let mut index = 0;
+    io::stdin()
+        .read_line(&mut temp)
+        .expect("Enter a number");
+    
+    let temp: f32 = temp
+        .trim()
+        .parse()
+        .expect("It is not a number");
+    
+    println!("Celsius Temperature: {temp}°C");
 
-    while index < 5 {
-        println!("Value of Array[{index}]: {}", a[index]);
-        index += 1;
-    }
+    let mut celsius_to_fahrenheit = temp * 1.8;
+    celsius_to_fahrenheit = celsius_to_fahrenheit + 32.0; 
+    println!("Temperature in Fahrenheit: {}°F", celsius_to_fahrenheit);
+    let celsius_to_kelvin = temp + 273.15;
+    println!("Temperature in Kelvin: {}K", celsius_to_kelvin);
+
+
+    // let mut num = 3;
+
+    // while num != 0{
+    //     println!("{num}!");
+    //     num -= 1;
+    // }
+    // println!("Lift OFF!");
+
+    // let a = [1, 2, 3, 4, 5];
+
+    // let mut index = 0;
+
+    // while index < 5 {
+    //     println!("Value of Array[{index}]: {}", a[index]);
+    //     index += 1;
+    // }
+
+    // for element in a {
+    //     println!("The Value is: {element}");
+    // }
+
+    // for number in (1..4).rev(){
+    //     println!("{number}");
+    // }
+    // println!("Lift OFF!");
 
 
     // let mut count = 0 ;

@@ -1,5 +1,9 @@
 use std::io;
 
+fn another_function() {
+    println!("Hello World! from function");
+}
+
 fn main() {
 
     let a = [1, 2, 3, 4, 5];
@@ -20,6 +24,8 @@ fn main() {
     let element = a[index];
 
     println!("The value at the array[{index}] is: {element}", );
+
+    another_function();
 
     // println!("Hello, world!");
 

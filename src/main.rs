@@ -1,28 +1,46 @@
 fn main () {
 
-    let mut count = 0 ;
+    let mut num = 3;
 
-    'counting_up: loop{
-        println!("Count = {count}");
+    while num != 0{
+        println!("{num}!");
+        num -= 1;
+    }
+    println!("Lift OFF!");
 
-        let mut remaining = 10;
+    let a = [1, 2, 3, 4, 5];
 
-        loop{
-            println!("Remaining = {remaining}");
+    let mut index = 0;
 
-            if remaining == 9 {
-                break;
-            }
-            if count == 2 {
-                break 'counting_up;
-            }
-            remaining -= 1;
-        }
-
-        count += 1;
+    while index < 5 {
+        println!("Value of Array[{index}]: {}", a[index]);
+        index += 1;
     }
 
-    println!("End counr = {count}");
+
+    // let mut count = 0 ;
+
+    // 'counting_up: loop{
+    //     println!("Count = {count}");
+
+    //     let mut remaining = 10;
+
+    //     loop{
+    //         println!("Remaining = {remaining}");
+
+    //         if remaining == 9 {
+    //             break;
+    //         }
+    //         if count == 2 {
+    //             break 'counting_up;
+    //         }
+    //         remaining -= 1;
+    //     }
+
+    //     count += 1;
+    // }
+
+    // println!("End count = {count}");
 
     // let mut counter = 0; 
 

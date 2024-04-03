@@ -1,16 +1,40 @@
 fn main () {
 
-    let mut counter = 0; 
+    let mut count = 0 ;
 
-    let result = loop {
-        counter += 1;
+    'counting_up: loop{
+        println!("Count = {count}");
 
-        if counter == 10{
-            break counter * 2;
+        let mut remaining = 10;
+
+        loop{
+            println!("Remaining = {remaining}");
+
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
         }
-    };
 
-    println!("The Value of Counter is: {result}");
+        count += 1;
+    }
+
+    println!("End counr = {count}");
+
+    // let mut counter = 0; 
+
+    // let result = loop {
+    //     counter += 1;
+
+    //     if counter == 10{
+    //         break counter * 2;
+    //     }
+    // };
+
+    // println!("The Value of Counter is: {result}");
 
     // let num = 6;
 

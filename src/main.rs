@@ -9,7 +9,7 @@ fn main () {
 
     println!("The Value of Y is: {y}");
 
-    let a = five();
+    let a = plus_one(5);
 
     println!("The value of A is: {a}");
 
@@ -25,4 +25,8 @@ fn print_labeled_measurement(value: i32, unit_label: char) {
 
 fn five () -> i32 {
     5
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1
 }

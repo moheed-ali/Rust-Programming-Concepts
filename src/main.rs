@@ -1,29 +1,56 @@
 use std::io;
 
+fn fib(x: u32) -> u32{
+    if x <= 1 {
+       return x
+    }
+    return fib(x-1) + fib(x-2)
+}
+
 fn main () {
 
-    // Temperature Converter
+    // nth Fibonacci Number
 
-    let mut temp = String::new();
+    println!("Please Enter a number: ");
 
-    println!("Enter the Temperature in Celsius: ");
+    let mut num = String::new();
 
     io::stdin()
-        .read_line(&mut temp)
-        .expect("Enter a number");
+        .read_line(&mut num)
+        .expect("Number Expected");
     
-    let temp: f32 = temp
+    let num: u32 = num 
         .trim()
         .parse()
-        .expect("It is not a number");
-    
-    println!("Celsius Temperature: {temp}°C");
+        .expect("Not a Number");
 
-    let mut celsius_to_fahrenheit = temp * 1.8;
-    celsius_to_fahrenheit = celsius_to_fahrenheit + 32.0; 
-    println!("Temperature in Fahrenheit: {}°F", celsius_to_fahrenheit);
-    let celsius_to_kelvin = temp + 273.15;
-    println!("Temperature in Kelvin: {}K", celsius_to_kelvin);
+    println!("The Number is :{num}");
+
+    println!("The Value from the function is : {}", fib(num));
+
+
+    // // Temperature Converter
+
+    // let mut temp = String::new();
+
+    // println!("Enter the Temperature in Celsius: ");
+
+    // io::stdin()
+    //     .read_line(&mut temp)
+    //     .expect("Enter a number");
+    
+    // let temp: f32 = temp
+    //     .trim()
+    //     .parse()
+    //     .expect("It is not a number");
+    
+    // println!("Celsius Temperature: {temp}°C");
+
+    // let mut celsius_to_fahrenheit = temp * 1.8;
+    // celsius_to_fahrenheit = celsius_to_fahrenheit + 32.0; 
+    // println!("Temperature in Fahrenheit: {}°F", celsius_to_fahrenheit);
+    // let celsius_to_kelvin = temp + 273.15;
+    // println!("Temperature in Kelvin: {}K", celsius_to_kelvin);
 
 
     // let mut num = 3;

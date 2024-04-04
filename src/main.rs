@@ -1,22 +1,24 @@
-struct User {
-    active: bool,
-    username: String,
-    email:String,
-    sign_in_count: u64, 
+enum Coin{
+    penny, 
+    Nickel,
+    Dime,
+    Quater,
+}
+
+fn value_in_cents(coin: Coin) -> u8{
+    match coin{
+        Coin::penny=> {
+            println!("Lucky penny!");
+            1
+        }
+        Coin::Nickel=> 5,
+        Coin::Dime=> 10,
+        Coin::Quater=> 25,
+    }
 }
 
 fn main () {
-    println!("Sturcture in Rust");
-
-    let user1 = User {
-        active: true,
-        username: String::from("admin"),
-        email: String::from("user@example.com"),
-        sign_in_count: 1,
-    };
-
-    // user1.email = String::from("anotheremail@example.com");
-
-    println!("User Name: {}, Active: {}, Email: {}, Sign in count: {}", user1.username, user1.active, user1.email, user1.sign_in_count);
-
+    println!("Enum Match");
+    let money = value_in_cents(Coin::penny);
+    println!("The Money is : {money}");
 }
